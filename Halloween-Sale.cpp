@@ -30,3 +30,29 @@ int howManyGames(int p, int d, int m, int s)
     
     return count;
 }
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string first_multiple_input_temp;
+    getline(cin, first_multiple_input_temp);
+
+    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+
+    int p = stoi(first_multiple_input[0]);
+
+    int d = stoi(first_multiple_input[1]);
+
+    int m = stoi(first_multiple_input[2]);
+
+    int s = stoi(first_multiple_input[3]);
+
+    int answer = howManyGames(p, d, m, s);
+
+    fout << answer << "\n";
+
+    fout.close();
+
+    return 0;
+}
